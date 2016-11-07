@@ -1,0 +1,30 @@
+version: 0.1 
+
+storage:
+  s3:
+    accesskey: {{ getv "/storage/s3/accesskey" }}
+    secretkey: {{ getv "/storage/s3/secretkey" }}
+    region: {{ getv "/storage/s3/region" }}
+    #regionendpoint: cloudformation.eu-west-1.amazonaws.com
+    bucket: {{ getv "/storage/s3/bucket" }}
+    encrypt: {{ getv "/storage/s3/encrypt" }}
+    secure: {{ getv "/storage/s3/secure" }}
+    v4auth: {{ getv "/storage/s3/v4auth" }}
+    chunksize: {{ getv "/storage/s3/chunksize" }}
+    rootdirectory: {{ getv "/storage/s3/rootdirectory" }}
+  delete:
+    enabled: {{ getv "/storage/delete/enabled" }}
+  cache:
+    blobdescriptor: {{ getv "/storage/cache/blobdescriptor" }}
+http:
+  addr: {{ getv "/http/addr" }}
+  headers:
+    X-Content-Type-Options: [nosniff]
+  tls:
+    certificate: /etc/docker/registry/fullchain.pem
+    key: /etc/docker/registry/privkey.pem
+reporting:
+  newrelic:
+    licensekey: {{ getv "/reporting/newrelic/licensekey" }}
+    name: {{ getv "/reporting/newrelic/name" }}
+    verbose: {{ getv "/reporting/newrelic/verbose" }}

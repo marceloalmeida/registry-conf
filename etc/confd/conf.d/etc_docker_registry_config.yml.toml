@@ -1,0 +1,20 @@
+[template]
+src = "etc/docker/registry/config.yml"
+dest = "/etc/docker/registry/config.yml"
+keys = [
+    "/storage/s3/accesskey",
+    "/storage/s3/secretkey",
+    "/storage/s3/region",
+    "/storage/s3/bucket",
+    "/storage/s3/encrypt",
+    "/storage/s3/secure",
+    "/storage/s3/v4auth",
+    "/storage/s3/chunksize",
+    "/storage/s3/rootdirectory",
+    "/storage/delete/enabled",
+    "/storage/cache/blobdescriptor",
+    "/http/addr",
+    "/reporting/newrelic/licensekey",
+    "/reporting/newrelic/name",
+    "/reporting/newrelic/verbose",
+]
